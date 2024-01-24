@@ -763,14 +763,14 @@ def get_argument_parser(profiles=None):
         ),
     )
 
-    try:
-        import pulp
+    # try:
+    #     import pulp
 
-        lp_solvers = pulp.listSolvers(onlyAvailable=True)
-    except ImportError:
-        # Dummy list for the case that pulp is not available
-        # This only happened when building docs.
-        lp_solvers = ["COIN_CMD"]
+    #     lp_solvers = pulp.listSolvers(onlyAvailable=True)
+    # except ImportError:
+    #     # Dummy list for the case that pulp is not available
+    #     # This only happened when building docs.
+    lp_solvers = ["COIN_CMD"]
     recommended_lp_solver = "COIN_CMD"
 
     group_exec.add_argument(
